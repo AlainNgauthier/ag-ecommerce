@@ -1,0 +1,30 @@
+.navbar {
+  /* positioning */
+  width: 100%;
+  padding: 10px 20px;
+  /* flexbox stuff */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* cosmetics */
+  background-color: #454545;
+  color: #ffffff;
+  border-radius: 0px 0px 5px 5px;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navbar__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+a {
+  color: #ffffff;
+}
