@@ -6,6 +6,7 @@ import Home from './Home';
 import Signin from "./Signin";
 import Signup from "./Signup";
 import Checkout from "./Checkout";
+import Product from "./Product";
 
 function Routes() {
     return(
@@ -17,6 +18,7 @@ function Routes() {
                 <Route exact path='/signin' component={Signin} />
                 <Route exact path='/signup' component={Signup} />
                 <Route exact path='/checkout' component={Checkout} />
+                <Route exact path='/:id' component={Product} />
                 </Switch>
             </React.Fragment>
         </BrowserRouter>)

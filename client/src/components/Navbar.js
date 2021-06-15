@@ -11,7 +11,7 @@ function Navbar() {
                     src={Logo} 
                     alt="logo"
                 />
-                <span>AG Shop</span>
+                <span className="navbar__name">AG SHOP</span>
             </Link>
             <div className="navbar__menu">
                 <Link to="/signin">

@@ -1,0 +1,46 @@
+.home {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.home__wrap {
+  width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__form-search {
+  margin: 20px;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #454545;
+}
+
+.home__form-search > form {
+}
+
+.form-input {
+  width: 300px;
+  height: 40px;
+  padding: 0 6px;
+  font-family: "Roboto", sans-serif;
+  color: #58606b;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.home__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
