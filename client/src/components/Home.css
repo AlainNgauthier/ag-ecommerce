@@ -7,10 +7,17 @@
   justify-content: center;
 }
 
+.home__loading {
+  height: 100vh;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
 .home__wrap {
   width: 1200px;
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
   align-items: center;
 }
 
@@ -21,26 +28,43 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #454545;
+  /*background: #454545;*/
 }
 
-.home__form-search > form {
+form {
+  display: flex;
+  align-items: center;
 }
 
 .form-input {
   width: 300px;
   height: 40px;
   padding: 0 6px;
+  margin: 0;
   font-family: "Roboto", sans-serif;
   color: #58606b;
-  border-radius: 5px;
-  border: none;
+  border-radius: 5px 0 0 5px;
+  border: 0.3px solid #e7ebf0;
   outline: none;
+}
+.input-btn {
+  width: 40px;
+  height: 40px;
+  outline: none;
+  border: none;
+  cursor: pointer;
 }
 
 .home__card {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+}
+
+.home__card > p {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
