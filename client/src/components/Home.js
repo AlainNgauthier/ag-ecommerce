@@ -1,5 +1,6 @@
 import React, { useState} from 'react';
 import { BiSearchAlt2 } from 'react-icons/bi';
+import ReactLoading from "react-loading";
 import SHOES_QUERY from '../queries/shoes/shoes.queries';
 import { useQuery } from "@apollo/client";
 import './Home.css';
@@ -13,7 +14,14 @@ function Home() {
     const { data, loading, error } = useQuery(SHOES_QUERY);
     //console.log(data);
     const api_uri = 'http://localhost:1337';
-    if(loading) return <div className="home__loading">Loading...</div>;
+    if(loading) return <div className="home__loading">
+        <ReactLoading
+          type={"bars"}
+          color={"#58606b"}
+          height={100}
+          width={100}
+        />
+    </div>;
     if(error) return <p>Error</p>;
 
     const handleChange = (event) => {
