@@ -5,7 +5,8 @@ import './Shoe.css';
 
 function Shoe(props) {
     const { shoeId } = props.match.params;
-    console.log(shoeId);
+    //console.log(shoeId);
+    const api_uri = 'http://localhost:1337';
 
     const { loading, error, data } = useQuery(SHOE, {
         variables: {
@@ -20,7 +21,11 @@ function Shoe(props) {
         <div className="container">
             <div className="container__wrap">
                 <div className="container__image-box">
-                    <span>image</span>
+                    <div className="image">
+                        <img src={`${api_uri}${data.shoe.image[0].url}`} 
+                            alt="image-box"
+                        />
+                    </div>
                 </div>
                 <div className="container__box">
                     <div className="container__name-box">
