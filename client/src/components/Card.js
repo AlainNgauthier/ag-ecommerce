@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Card.css';
 
-function Card({ id, name, description, price, image }) {
+function Card({ id, name, price, image }) {
 
     return(
         <div className="card">

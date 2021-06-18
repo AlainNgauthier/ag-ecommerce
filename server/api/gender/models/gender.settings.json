@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "genders",
+  "info": {
+    "name": "Gender",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "shoes": {
+      "via": "gender",
+      "collection": "shoes"
+    }
+  }
+}

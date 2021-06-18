@@ -1,17 +1,16 @@
 import gql from "graphql-tag";
 
 const SHOES_QUERY = gql`
-    query shoes{
-        shoes{
+    query shoes {
+        shoes {
             _id
             name
-            description
             price
-            image{
+            image {
                 url
             }
         }
     }
 `;
 
-export default SHOES_QUERY;
+export default SHOES_QUERY ;

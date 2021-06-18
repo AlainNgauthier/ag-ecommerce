@@ -1,7 +1,7 @@
 import React, { useState} from 'react';
 import { BiSearchAlt2 } from 'react-icons/bi';
 import ReactLoading from "react-loading";
-import SHOES_QUERY from '../queries/shoes/shoes.queries';
+import SHOES_QUERY from '../graphql/Queries/shoes.queries';
 import { useQuery } from "@apollo/client";
 import './Home.css';
 import Card from './Card';
@@ -12,7 +12,6 @@ function Home() {
     const [search, setSearch] = useState("");
     const [searchResult, setSearchResult] = useState([]);
     const { data, loading, error } = useQuery(SHOES_QUERY);
-    //console.log(data);
     const api_uri = 'http://localhost:1337';
     if(loading) return <div className="home__loading">
         <ReactLoading
@@ -25,7 +24,6 @@ function Home() {
     if(error) return <p>Error</p>;
 
     const handleChange = (event) => {
-        //console.log(event);
         setSearch(event.target.value);
     };
 
@@ -33,7 +31,6 @@ function Home() {
         e.preventDefault();
         const results = data.shoes.filter(
             item => item.name.toLowerCase().includes(search.toLowerCase()));
-        //console.log(results);
         setFilter(true);
         setSearchResult(results);
     };
@@ -66,7 +63,6 @@ function Home() {
                                 key={key}
                                 id={item._id} 
                                 name={item.name} 
-                                description={item.description}
                                 price={item.price}
                                 image={`${api_uri}${item.image[0].url}`}
                             />

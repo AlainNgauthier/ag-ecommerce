@@ -32,6 +32,14 @@
     },
     "price": {
       "type": "integer"
+    },
+    "brand": {
+      "model": "category",
+      "via": "shoes"
+    },
+    "gender": {
+      "via": "shoes",
+      "model": "gender"
     }
   }
 }
