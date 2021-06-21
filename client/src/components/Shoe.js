@@ -23,7 +23,7 @@ function Shoe(props) {
                 <div className="container__image-box">
                     <div className="image">
                         <img src={`${api_uri}${data.shoe.image[0].url}`} 
-                            alt="image-box"
+                            alt="product"
                         />
                     </div>
                 </div>

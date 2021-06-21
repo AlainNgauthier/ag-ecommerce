@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-import { BiSearchAlt2 } from 'react-icons/bi';
+//import { BiSearchAlt2 } from 'react-icons/bi';
 import ReactLoading from "react-loading";
 import SHOES_QUERY from '../graphql/Queries/shoes.queries';
 import { useQuery } from "@apollo/client";
@@ -25,8 +25,12 @@ function Home() {
 
     const handleChange = (event) => {
         setSearch(event.target.value);
+        const results = data.shoes.filter(
+            item => item.name.toLowerCase().includes(search.toLowerCase()));
+        setFilter(true);
+        setSearchResult(results);
     };
-
+/*
     function handleSubmit(e){
         e.preventDefault();
         const results = data.shoes.filter(
@@ -34,26 +38,18 @@ function Home() {
         setFilter(true);
         setSearchResult(results);
     };
-
+*/
     return(
         <div className="home" >
             <div className="home__form-search">
-                    <form onSubmit={handleSubmit}>
-                        <input
-                            id="input-search"
-                            className="form-input" 
-                            type="text"
-                            placeholder="Olá, o que você procura?"
-                            value={search}
-                            onChange={handleChange}
-                        />
-                        <button 
-                            className="input-btn"
-                            type="submit"
-                        >
-                            <BiSearchAlt2 size={22} />
-                        </button>
-                    </form>
+                <input
+                    id="input-search"
+                    className="form-input" 
+                    type="text"
+                    placeholder="Olá, o que você procura?"
+                    value={search}
+                    onChange={handleChange}
+                />
             </div>
             <div className="home__wrap">
                 {!filter ?

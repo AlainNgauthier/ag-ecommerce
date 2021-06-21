@@ -46,6 +46,7 @@ form {
   font-family: "Roboto", sans-serif;
   color: #58606b;
   border-radius: 5px 0 0 5px;
+  box-shadow: 0 2px 4px #00000029;
   border: 0.3px solid #e7ebf0;
   outline: none;
 }
