@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
-import Navbar from './Navbar';
+import Navbar from './Navbar/Navbar';
 import Home from './Home';
-import Signin from "./Signin";
-import Signup from "./Signup";
-import Checkout from "./Checkout";
+import Signin from "./Signin/Signin";
+import Signup from "./Signup/Signup";
+import Checkout from "./Checkout/Checkout";
 import Shoe from "./Shoe";
 
 function Routes() {
