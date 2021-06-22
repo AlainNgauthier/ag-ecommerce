@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './Signup.css';
+import MsgAdvert from '../MsgAdvert'
 
-function Signup() {
+export default function Signup() {
 
-    const [isValid, setIsValid] = useState(false);
+    const [advert, setAdvert] = useState(false);
     const[values, setValues] = useState({
         username: '',
         email: '',
         password: '',
     });
 
+    let history = useHistory();
+
     const handleChange = (e) => {
-        //event.persist();
         const { name, value } = e.target;
         setValues({
             ...values,
@@ -19,11 +22,18 @@ function Signup() {
         })
     }
 
+    const showAdvMsg = () => {
+        setAdvert(true);
+        setTimeout(() => setAdvert(false), 3000);
+    }
+
     function handleSubmit(e) {
         e.preventDefault();
         if(values.username && values.email && values.password){
-            console.log('Submetido');
-            setIsValid(true);
+            //
+            history.push("/");
+        } else {
+            showAdvMsg();
         }
     }
 
@@ -79,13 +89,19 @@ function Signup() {
                                 (<span className="form--invalid">Insera uma senha</span>)}
                         </div>
                     </div>
+                    {advert && 
+                        <MsgAdvert />
+                    }
                     <button
                         className="form--btn"
                         type="submit">Criar minha conta</button>
                 </form>
+                <div className="div-redirect">
+                    <p>Já possui uma conta? Clique 
+                        <span><Link className="redirect" to='/signin'> aqui</Link></span></p>
+                </div>
             </div>
         </div>
     )
 }
 
-export default Signup;

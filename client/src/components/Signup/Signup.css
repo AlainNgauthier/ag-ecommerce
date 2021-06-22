@@ -1,6 +1,7 @@
 .main {
   width: 100%;
   height: 70vh;
+  margin-top: 30px;
   padding: 20px;
   display: flex;
   align-items: center;
@@ -9,6 +10,7 @@
 
 .main__content {
   padding: 30px;
+  height: 580px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +23,7 @@
 
 .form {
   width: 500px;
-  margin: 30px 0;
+  margin: 25px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,12 +32,15 @@
   font-size: 20px;
 }
 
+.form > div:nth-child(3) {
+  margin-bottom: 20px;
+}
+
 .form--div {
   width: 370px;
   height: 50px;
   display: flex;
   justify-content: space-around;
-  /*align-items: center;*/
   gap: 23px;
 }
 
@@ -57,11 +62,11 @@
 
 .form--invalid {
   font-size: 12px;
-  color: #c70039;
+  color: #fa0b0b;
 }
 
 .form--btn {
-  margin-top: 30px;
+  /*margin-top: 20px;*/
   width: 200px;
   height: 40px;
   border-radius: 5px;
@@ -71,4 +76,12 @@
   font-weight: 700;
   outline: none;
   cursor: pointer;
+}
+
+.div-redirect {
+  font-size: 13px;
+}
+
+.redirect {
+  color: #fa0b0b;
 }
