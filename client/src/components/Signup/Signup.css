@@ -78,6 +78,10 @@
   cursor: pointer;
 }
 
+.form--btn:disabled {
+  background: #ffffff;
+}
+
 .div-redirect {
   font-size: 13px;
 }

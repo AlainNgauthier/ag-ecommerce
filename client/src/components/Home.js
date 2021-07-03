@@ -15,10 +15,10 @@ function Home() {
     const api_uri = 'http://localhost:1337';
     if(loading) return <div className="home__loading">
         <ReactLoading
-          type={"bars"}
-          color={"#58606b"}
-          height={100}
-          width={100}
+            type={"bars"}
+            color={"#58606b"}
+            height={100}
+            width={100}
         />
     </div>;
     if(error) return <p>Error</p>;

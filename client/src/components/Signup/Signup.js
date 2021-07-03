@@ -1,16 +1,22 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import Strapi from 'strapi-sdk-javascript/build/main';
+import { setToken } from '../../utils/index';
 import './Signup.css';
-import MsgAdvert from '../MsgAdvert'
+import MsgAdvert from '../MsgAdvert';
+
+const apiUrl = process.env.API_URL || "http://localhost:1337";
+const strapi = new Strapi(apiUrl);
 
 export default function Signup() {
-
+    const [loading, setLoading] = useState(false);
     const [advert, setAdvert] = useState(false);
     const[values, setValues] = useState({
         username: '',
         email: '',
         password: '',
     });
+
 
     let history = useHistory();
 
@@ -27,11 +33,24 @@ export default function Signup() {
         setTimeout(() => setAdvert(false), 3000);
     }
 
-    function handleSubmit(e) {
+    const handleSubmit = async e => {
         e.preventDefault();
+
+        /* sign up user */
         if(values.username && values.email && values.password){
-            //
-            history.push("/");
+            try{
+                setLoading(true);
+                const response = await strapi.register(values.username, values.email, values.password);
+                //console.log(response);
+                /* to manage user sesson (storage token in local storage) */
+                setToken(response.jwt);
+                setLoading(false);
+                //console.log(loading);
+                history.push("/");
+            }catch(err) {
+                setLoading(false);
+                //console.log(err.message);
+            }           
         } else {
             showAdvMsg();
         }
@@ -93,6 +112,7 @@ export default function Signup() {
                         <MsgAdvert />
                     }
                     <button
+                        disabled={loading}
                         className="form--btn"
                         type="submit">Criar minha conta</button>
                 </form>
