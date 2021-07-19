@@ -17,7 +17,6 @@ export default function Signup() {
         password: '',
     });
 
-
     let history = useHistory();
 
     const handleChange = (e) => {
@@ -35,21 +34,17 @@ export default function Signup() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
         /* sign up user */
         if(values.username && values.email && values.password){
             try{
                 setLoading(true);
                 const response = await strapi.register(values.username, values.email, values.password);
-                //console.log(response);
                 /* to manage user sesson (storage token in local storage) */
                 setToken(response.jwt);
                 setLoading(false);
-                //console.log(loading);
                 history.push("/");
             }catch(err) {
                 setLoading(false);
-                //console.log(err.message);
             }           
         } else {
             showAdvMsg();

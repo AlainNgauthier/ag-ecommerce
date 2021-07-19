@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import Strapi from 'strapi-sdk-javascript/build/main';
 import { setToken } from '../../utils/index';
 import './Signin.css';
 import MsgAdvert from '../MsgAdvert';
+import { UseAppContext } from '../Context/context';
 
 const apiUrl = process.env.API_URL || "http://localhost:1337";
 const strapi = new Strapi(apiUrl);
@@ -16,6 +17,7 @@ export default function Signin() {
         password: '',
     });
 
+    const {handleName} = useContext(UseAppContext);
 
     let history = useHistory();
 
@@ -34,20 +36,19 @@ export default function Signin() {
 
     const handleSubmit = async e => {
         e.preventDefault();
-
         /* sign up user */
         if(values.email && values.password){
             try{
                 setLoading(true);
                 const response = await strapi.login(values.email, values.password);
-                //console.log(response);
                 /* to manage user sesson (storage token in local storage) */
                 setToken(response.jwt);
+                console.log(response.user.username);
+                handleName(response.user.username);
                 setLoading(false);
                 history.push("/");
             }catch(err) {
                 setLoading(false);
-                //console.log(err.message);
             }           
         } else {
             showAdvMsg();

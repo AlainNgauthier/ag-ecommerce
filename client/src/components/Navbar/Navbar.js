@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import Logo from '../../assets/logo.png';
 import { getToken, clearToken } from "../../utils/index";
 import { useHistory, withRouter } from 'react-router-dom';
+import { UseAppContext } from '../Context/context';
 
 function Navbar() {
     let history = useHistory();
@@ -17,6 +18,9 @@ function Navbar() {
 }
 
 const AuthNav = ({ handleSignOut }) => {
+
+    const {username} = useContext(UseAppContext);
+
     return(
     <div className="navbar">
         {/* Title and logo */}
@@ -29,8 +33,9 @@ const AuthNav = ({ handleSignOut }) => {
         </Link>
         {/* Check Out and Sign Out button*/}
         <div className="navbar__menu">
+            <span>Olá <span style={{fontWeight: 'bold', fontSize: '20px'}}>{username}</span>!</span>
             <Link to="/checkout" className="navbar__link">
-                Checkout
+                Carinho
             </Link>
             <button className="navbar--signout" onClick={handleSignOut}>
                 Sair
@@ -50,7 +55,7 @@ const UnAuthNav = () => {
                 />
                 <span className="navbar__name">AG SHOP</span>
             </Link>
-            {/* Sign in, Sign Up, Sign Out */}
+            {/* Sign in, Sign Up */}
             <div className="navbar__menu">
                 <Link to="/signin" className="navbar__link">
                     Entrar

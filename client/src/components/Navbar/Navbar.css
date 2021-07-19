@@ -38,7 +38,18 @@
 a {
   color: #ffffff;
 }
-
+/*
 .navbar__link:hover {
   font-weight: bold;
+}
+*/
+.navbar--signout {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+  font-weight: 700;
+  background: #b61212;
+  border: 1px solid #b61212;
+  cursor: pointer;
 }

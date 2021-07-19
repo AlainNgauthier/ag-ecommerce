@@ -1,11 +1,9 @@
 import React, { useState} from 'react';
-//import { BiSearchAlt2 } from 'react-icons/bi';
 import ReactLoading from "react-loading";
 import SHOES_QUERY from '../graphql/Queries/shoes.queries';
 import { useQuery } from "@apollo/client";
 import './Home.css';
 import Card from './Card';
-
 
 function Home() {
     const [filter, setFilter] = useState(false);
@@ -13,14 +11,14 @@ function Home() {
     const [searchResult, setSearchResult] = useState([]);
     const { data, loading, error } = useQuery(SHOES_QUERY);
     const api_uri = 'http://localhost:1337';
-    if(loading) return <div className="home__loading">
-        <ReactLoading
-            type={"bars"}
-            color={"#58606b"}
-            height={100}
-            width={100}
-        />
-    </div>;
+    if(loading) return  <div className="home__loading">
+                            <ReactLoading
+                                type={"bars"}
+                                color={"#58606b"}
+                                height={100}
+                                width={100}
+                            />
+                        </div>;
     if(error) return <p>Error</p>;
 
     const handleChange = (event) => {
@@ -30,15 +28,7 @@ function Home() {
         setFilter(true);
         setSearchResult(results);
     };
-/*
-    function handleSubmit(e){
-        e.preventDefault();
-        const results = data.shoes.filter(
-            item => item.name.toLowerCase().includes(search.toLowerCase()));
-        setFilter(true);
-        setSearchResult(results);
-    };
-*/
+
     return(
         <div className="home" >
             <div className="home__form-search">
