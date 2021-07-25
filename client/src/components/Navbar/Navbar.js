@@ -27,7 +27,7 @@ const AuthNav = ({ handleSignOut }) => {
         <Link to="/" className="navbar__logo">
             <img 
                 src={Logo} 
-                alt="logo"
+                alt="logo AG Shop"
             />
             <span className="navbar__name">AG SHOP</span>
         </Link>

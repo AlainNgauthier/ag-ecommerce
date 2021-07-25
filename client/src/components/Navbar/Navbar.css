@@ -53,3 +53,9 @@ a {
   border: 1px solid #b61212;
   cursor: pointer;
 }
+
+@media screen and (max-width: 400px) {
+  .navbar__name {
+    font-size: 14px;
+  }
+}
