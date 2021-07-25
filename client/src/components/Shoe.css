@@ -1,37 +1,44 @@
 .container {
-  margin: 10px;
+  width: 100%;
+  height: 100vh;
+  /*padding: 10px;*/
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-.container__wrap {
-  /*width: 1200px;*/
-  height: 800px;
-  padding: 10px;
+.container__wrap__1 {
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 30px;
 }
 
 .container__image-box {
-  width: 500px;
+  width: 70%;
   height: 500px;
-  margin: 0 10px;
   display: flex;
   justify-content: center;
+  background: #eaecee;
 }
 
 .image > img {
   width: 100%;
   height: 100%;
+  background: transparent;
 }
 
 .container__box {
   width: 500px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
+}
+
+.box__name {
+  font-size: 42px;
 }
 
 .container__price-box {
@@ -39,10 +46,11 @@
 }
 
 .container__price-box {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .container__price-box > span > span {
+  color: #138d75;
   font-size: 20px;
   font-weight: 700;
 }

@@ -8,8 +8,10 @@
   flex-direction: column;
 }
 
-.card > span:nth-child(1) {
-  /*margin-left: 10px;*/
+.card > span:nth-child(2) {
+  height: 40px;
+}
+.card > span:nth-child(3) {
   margin-bottom: 10px;
   font-size: 15px;
 }
@@ -23,10 +25,10 @@
   justify-content: center;
   border: 1px solid #d5d8dc;
   border-radius: 5px;
-  cursor: pointer;
 }
 .card__img:hover {
   transform: translateY(-2px);
+  z-index: 2;
 }
 
 .card__img > img {
@@ -41,20 +43,21 @@
 
 .card__price {
   margin-top: 5px;
-  margin-left: 17px;
-  color: #58606b;
+  margin-left: 10px;
 }
 
 .card__details {
   width: 100px;
-  margin-top: 10px;
+  height: 30px;
+  margin-top: 5px;
   padding: 10px;
   cursor: pointer;
-  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 .card__details:hover {
-  border: 1px solid #2877e0;
+  border: 0.1px solid #2877e0;
 }
 
 .card__details--link {

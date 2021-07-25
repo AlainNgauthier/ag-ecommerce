@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from "@apollo/client";
 import SHOE from '../graphql/Queries/shoe.queries';
+import Loader from '../components/Loader';
 import './Shoe.css';
 
 function Shoe(props) {
@@ -14,12 +15,12 @@ function Shoe(props) {
         },
     });
 
-    if(loading) return <h1>Loading...</h1>;
-    if(error) return `Error! ${error}`;
+    if(loading) return <Loader />;
+    // if(error) return `Error! ${error}`;
 
     return data && (
         <div className="container">
-            <div className="container__wrap">
+            <div className="container__wrap__1">
                 <div className="container__image-box">
                     <div className="image">
                         <img src={`${api_uri}${data.shoe.image[0].url}`} 
@@ -29,19 +30,22 @@ function Shoe(props) {
                 </div>
                 <div className="container__box">
                     <div className="container__name-box">
-                        <h2>{data.shoe.name}</h2>
+                        <span className="box__name">{data.shoe.name}</span>
                         <p>{data.shoe.gender.name}</p>
-                    </div>
-                    <div className="container__price-box">
-                        <span>por <span>R$ {data.shoe.price}</span></span>
-                    </div>
-                    <div className="container__description-box">
-                        <div className="">{data.shoe.description}</div>
+                        <div className="container__price-box">
+                            <span>por <span>R$ {data.shoe.price}</span></span>
+                        </div>
                     </div>
                 </div>
+            </div>
+            <div>
+                {/* <div className="container__description-box">
+                    <div className="">{data.shoe.description}</div>
+                </div> */}
             </div>
         </div>
     )
 }
+                    
 
 export default Shoe;

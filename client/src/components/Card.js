@@ -6,11 +6,10 @@ function Card({ id, name, price, image }) {
 
     return(
         <div className="card">
-            <span><h3>{name}</h3></span>
-            {/*<span>{description}</span>*/}
             <div className="card__img">
                 <img src={image} alt="img" />
             </div>
+            <span><h3>{name}</h3></span>
             <span className="card__price">
                 <h3>R$ {price}</h3>
                 <span>10x de R$ {price / 10}</span>
