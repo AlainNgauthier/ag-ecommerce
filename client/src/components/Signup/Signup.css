@@ -78,8 +78,13 @@
   cursor: pointer;
 }
 
+.form--btn:active {
+  transform: translateY(3px);
+}
+
 .form--btn:disabled {
-  background: #ffffff;
+  background: #fa0b0b54;
+  cursor: wait;
 }
 
 .div-redirect {
