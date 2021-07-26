@@ -14,11 +14,11 @@ circle {
   animation: rotation 2s ease-in-out alternate infinite;
 }
 
-svg {
+.svg {
   transform: translateX(-50px);
   filter: drop-shadow(
     100px 0 #00ccff
-  ); /* creer un ombre et decaller a 100px sur X*/
+  ); /* creer un ombre et decaller a 100px sur X et 0 sur Y*/
 }
 
 @keyframes rotation {

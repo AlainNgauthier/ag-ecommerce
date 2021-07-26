@@ -1,25 +1,25 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-
 import Navbar from './Navbar/Navbar';
-import MenuResponsivo from './MenuResponsive';
+import MenuResponsive from './MenuResponsive';
 import Footer from './Footer/Footer';
 import Home from './Home';
 import Signin from "./Signin/Signin";
 import Signup from "./Signup/Signup";
 import Checkout from "./Checkout/Checkout";
 import Shoe from "./Shoe";
-import { UseAppContext } from '../components/Context/context';
+// import { UseAppContext } from '../components/Context/context';
 
 function Routes() {
 
-    const {toogle, isOpen} = useContext(UseAppContext);
+    // const {toggle, isOpen} = useContext(UseAppContext);
+    // console.log(isOpen);
 
     return(
         <BrowserRouter>
             <React.Fragment>
                 <Navbar />
-                {/* <MenuResponsive isOpen={isOpen} toogle={toogle} /> */}
+                <MenuResponsive />
                 <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path='/signin' component={Signin} />

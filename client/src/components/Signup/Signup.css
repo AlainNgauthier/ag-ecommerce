@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
   gap: 16px;
-  border: solid 1px #ccc;
+  /* border: solid 1px #ccc; */
   border-radius: 10px;
   box-shadow: 0 2px 4px #00000029;
 }
@@ -93,4 +93,10 @@
 
 .redirect {
   color: #fa0b0b;
+}
+
+@media screen and (max-width: 600px) {
+  .main__content {
+    border: none;
+  }
 }

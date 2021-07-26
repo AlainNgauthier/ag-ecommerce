@@ -10,12 +10,12 @@ const UseAppContextProvider = props => {
         setUsername(name);
     }
 
-    const toogle = () => {
+    const toggle = () => {
         setIsOpen(!isOpen);
     }
 
     return(
-        <UseAppContext.Provider value={{ handleName, username, isOpen, toogle }} >
+        <UseAppContext.Provider value={{ handleName, username, isOpen, toggle }} >
             {props.children}
         </UseAppContext.Provider>
     )

@@ -42,7 +42,7 @@
 }
 
 .card__price {
-  margin-top: 5px;
+  margin-top: 2px;
   margin-left: 10px;
 }
 
@@ -65,4 +65,26 @@
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    align-items: center;
+  }
+
+  .card > span:nth-child(2) {
+    text-align: center;
+  }
+
+  .card__price {
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card__details {
+    justify-content: center;
+    border: 0.1px solid #2877e0;
+  }
 }

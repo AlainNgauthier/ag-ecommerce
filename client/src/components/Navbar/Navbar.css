@@ -5,6 +5,7 @@
   width: 100%;
   height: 90px;
   padding: 10px 20px;
+  z-index: 3;
   /* flexbox stuff */
   display: flex;
   align-items: center;
@@ -32,33 +33,59 @@ a {
   font-weight: 700;
 }
 
-.navbar__menu {
+.menu-bars {
+  display: none;
+  color: #ffffff;
+}
+
+.navbar-active {
+  display: flex;
+}
+.navbar__toggle {
+  display: none;
+}
+
+.navbar__menu__items {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
 }
 
-/* .navbar__menu > span::first-letter {
-  font-size: 40px;
-} */
+.navbar__user {
+  margin-right: 20px;
+}
+
 .navbar__link {
   width: 122px;
   padding: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  /* font-weight: 500; */
 }
 
 .navbar__link:hover {
   border: 1px solid #ffffff;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
   .navbar__name {
-    font-size: 14px;
+    font-size: 20px;
+  }
+
+  .menu-bars {
+    position: absolute;
+    right: 10px;
+    /* transform: translate(100%); */
+    display: block;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  .navbar-active {
+    display: none;
   }
 }

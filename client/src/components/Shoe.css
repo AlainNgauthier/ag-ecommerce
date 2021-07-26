@@ -54,3 +54,37 @@
   font-size: 20px;
   font-weight: 700;
 }
+
+@media screen and (max-width: 600px) {
+  .container__wrap__1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .container__image-box {
+    width: 100%;
+    height: 500px;
+    /* display: flex;
+    justify-content: center; */
+    background: #eaecee;
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+  }
+  .image > img {
+    width: 80%;
+    height: 80%;
+    background: transparent;
+  }
+
+  .box__name {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
